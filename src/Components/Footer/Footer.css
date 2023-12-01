@@ -1,0 +1,19 @@
+.footer {
+  width: 90%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-top: 4rem;
+  font-size: .9em;
+}
+
+.devIcon {
+  width: 25px;
+  margin-left: 1rem;
+  transition: all ease 300ms;
+}
+
+.devIcon:hover {
+  transform: rotate(10deg);
+  cursor: pointer;
+}

@@ -1,19 +1,19 @@
 
 import './App.css'
+import Footer from './Components/Footer/Footer'
+import Header from './Components/Header/Header'
 
 function App() {
 
 
   return (
     <body className='page'>
-      <header className='header'>
-        <h1>Technical Test: Movie Search</h1>
-      </header>
+      <Header />
       <main className='main'>
         <form className='form'>
           <label htmlFor="">Enter the name of the movie </label>
           <div className='inputSearch'>
-            <input type="text" placeholder='Avengers, Star Wars, The Matrix ...' />
+            <input type="text" placeholder='Avengers, Star Wars, ...' />
             <button type='submit'>Search</button>
           </div>
         </form>
@@ -21,9 +21,7 @@ function App() {
           Render
         </section>
       </main>
-      <footer className='footer'>
-        Footer
-      </footer>
+      <Footer />
 
     </body>
   )

@@ -16,9 +16,6 @@
   place-items: center;
 }
 
-.header {
-  margin-bottom: 2rem;
-}
 
 .form {
   display: flex;
@@ -34,12 +31,4 @@
 .listSection {
   display: flex;
   flex-wrap: wrap;
-}
-
-.footer {
-  width: 90%;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  margin-top: 4rem;
 }
