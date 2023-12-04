@@ -1,0 +1,25 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.itemList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  width: 200px;
+  max-height: 390px;
+}
+
+.titleCard {
+  margin: 0;
+}
+
+.itemImg {
+  height: 290px;
+  margin-top: .5rem;
+
+}
