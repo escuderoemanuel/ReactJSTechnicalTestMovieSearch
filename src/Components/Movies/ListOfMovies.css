@@ -8,18 +8,17 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   text-align: center;
   width: 200px;
   max-height: 390px;
 }
 
 .titleCard {
-  margin: 0;
+  margin: .5rem 0 0;
 }
 
 .itemImg {
   height: 290px;
-  margin-top: .5rem;
+  border-radius: 10px;
 
 }

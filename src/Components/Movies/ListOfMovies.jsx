@@ -7,12 +7,13 @@ function ListOfMovies({ movies }) {
     <ul className='list'>
       {
         movies.map(movie => (
-          <li key={movie.imdbID} className='itemList'>
+          <li key={movie.id} className='itemList'>
+            <img src={movie.poster} alt={`Poster of the movie ${movie.title}`} className='itemImg' />
             <div className='headerCard'>
-              <h4 className='titleCard'>{movie.Title}</h4>
-              <p>[ {movie.Year} ]</p>
+              <h4 className='titleCard'>{movie.title}</h4>
+              <p>[ {movie.year} ]</p>
             </div>
-            <img src={movie.Poster} alt={`Poster of the movie ${movie.Title}`} className='itemImg' />
+
           </li>
         ))
       }
