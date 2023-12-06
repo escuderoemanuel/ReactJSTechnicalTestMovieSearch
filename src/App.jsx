@@ -43,11 +43,13 @@ function App() {
       < Header />
       <main className='main'>
         <form className='form' onSubmit={handleSubmit}>
-          <label htmlFor="">Enter the name of the movie </label>
-          <div className='inputSearch'>
-            <input onChange={handleChange} value={search} name='query' type="text" placeholder='Avengers, Star Wars, ...' />
-            <button type='submit'>Search</button>
-          </div>
+          <section className='inputSearch'>
+            <div>
+              <label className='inputLabel' htmlFor="queryId">Enter the name of the movie </label>
+              <input className='input' onChange={handleChange} value={search} name='query' type="text" id='queryId' placeholder='Avengers, Star Wars, ...' />
+            </div>
+            <button className='btnSearch' type='submit'>Search</button>
+          </section>
         </form>
         <section className='sectionError'>
           {error && <p className='error'>{error}</p>}

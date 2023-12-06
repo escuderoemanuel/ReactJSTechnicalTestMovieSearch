@@ -21,7 +21,20 @@
 
 .inputSearch {
   display: flex;
+  align-items: end;
   margin: 1rem 0;
+  text-align: center;
+}
+
+
+.input {
+  height: 45px;
+  width: 250px;
+  border: 1px solid rgba(255, 255, 255, 0.2)
+}
+
+.btnSearch {
+  height: 45px;
 }
 
 .sectionError {
