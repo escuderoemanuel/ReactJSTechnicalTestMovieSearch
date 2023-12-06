@@ -8,6 +8,7 @@ export function useSearch() {
   useEffect(() => {
     if (isFirstInput.current) {
       isFirstInput.current = search === ''
+      return
     }
     if (search === '') {
       setError('Cannot search for an empty movie')

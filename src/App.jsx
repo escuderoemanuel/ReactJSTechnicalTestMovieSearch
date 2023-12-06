@@ -1,15 +1,13 @@
-import { useState, useEffect, useRef } from 'react'
-
 import './App.css'
-import { useMovies } from './hooks/useMovies'
 import Footer from './Components/Footer/Footer'
 import Header from './Components/Header/Header'
+import { useMovies } from './hooks/useMovies'
 import { Movies } from './Components/Movies/ListOfMovies'
 import { useSearch } from './hooks/useSearch'
 
 function App() {
-  const { movies } = useMovies()
   const { search, setSearch, error } = useSearch()
+  const { movies, getMovies } = useMovies({ search })
 
   // Method with useRef
   /*const inputRef = useRef()
@@ -31,7 +29,8 @@ function App() {
     event.preventDefault()
     /* const fields = new FormData(event.target)
     const query = fields.get('query') */
-    console.log({ search })
+    //console.log({ search })
+    getMovies()
   }
 
   // Input change handler (input form)
