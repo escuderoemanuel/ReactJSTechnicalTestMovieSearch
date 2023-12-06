@@ -30,5 +30,9 @@
 
 .error {
   margin-bottom: 2rem;
-  color: peru;
+  color: yellowgreen;
+}
+
+.loadingText {
+  color: yellowgreen;
 }

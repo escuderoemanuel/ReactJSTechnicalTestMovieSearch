@@ -13,7 +13,6 @@ function ListOfMovies({ movies }) {
               <h4 className='titleCard'>{movie.title}</h4>
               <p>[ {movie.year} ]</p>
             </div>
-
           </li>
         ))
       }

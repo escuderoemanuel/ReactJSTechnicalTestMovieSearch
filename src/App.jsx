@@ -7,7 +7,7 @@ import { useSearch } from './hooks/useSearch'
 
 function App() {
   const { search, setSearch, error } = useSearch()
-  const { movies, getMovies } = useMovies({ search })
+  const { movies, loading, getMovies } = useMovies({ search })
 
   // Method with useRef
   /*const inputRef = useRef()
@@ -52,7 +52,9 @@ function App() {
         <section className='sectionError'>
           {error && <p className='error'>{error}</p>}
         </section>
-        <Movies movies={movies} />
+        {loading ? <p className='loadingText'>Loading...</p> :
+          <Movies movies={movies} />
+        }
       </main>
       <Footer />
 
