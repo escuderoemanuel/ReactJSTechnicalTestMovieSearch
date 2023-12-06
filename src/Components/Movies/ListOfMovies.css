@@ -1,13 +1,12 @@
 .list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 50px;
 }
 
 .itemList {
   list-style: none;
-  display: flex;
-  flex-direction: column;
   text-align: center;
   width: 200px;
   max-height: 390px;
@@ -20,5 +19,4 @@
 .itemImg {
   height: 290px;
   border-radius: 10px;
-
 }

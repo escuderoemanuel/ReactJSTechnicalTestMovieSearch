@@ -21,5 +21,14 @@
 
 .inputSearch {
   display: flex;
-  margin: 1rem 0 3rem;
+  margin: 1rem 0;
+}
+
+.sectionError {
+  height: 50px;
+}
+
+.error {
+  margin-bottom: 2rem;
+  color: peru;
 }
