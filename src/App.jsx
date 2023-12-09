@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 import Footer from './Components/Footer/Footer'
 import Header from './Components/Header/Header'
@@ -6,8 +7,9 @@ import { Movies } from './Components/Movies/ListOfMovies'
 import { useSearch } from './hooks/useSearch'
 
 function App() {
+  const [sort, setSort] = useState(false)
   const { search, setSearch, error } = useSearch()
-  const { movies, loading, getMovies } = useMovies({ search })
+  const { movies, loading, getMovies } = useMovies({ search, sort })
 
   // Method with useRef
   /*const inputRef = useRef()
@@ -38,6 +40,10 @@ function App() {
     setSearch(event.target.value)
   }
 
+  const handleSort = () => {
+    setSort(!sort)
+  }
+
   return (
     <>
       < Header />
@@ -48,6 +54,7 @@ function App() {
               <label className='inputLabel' htmlFor="queryId">Enter the name of the movie </label>
               <input className='input' onChange={handleChange} value={search} name='query' type="text" id='queryId' placeholder='Avengers, Star Wars, ...' />
             </div>
+            <input className='checkbox' type="checkbox" id='sortId' onChange={handleSort} checked={sort} />
             <button className='btnSearch' type='submit'>Search</button>
           </section>
         </form>
