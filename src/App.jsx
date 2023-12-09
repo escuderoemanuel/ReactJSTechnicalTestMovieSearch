@@ -32,7 +32,7 @@ function App() {
     /* const fields = new FormData(event.target)
     const query = fields.get('query') */
     //console.log({ search })
-    getMovies()
+    getMovies({ search })
   }
 
   // Input change handler (input form)
