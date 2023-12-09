@@ -21,6 +21,7 @@
 
 .inputSearch {
   display: flex;
+  flex-direction: column;
   align-items: end;
   margin: 1rem 0;
   text-align: center;
@@ -48,4 +49,16 @@
 
 .loadingText {
   color: yellowgreen;
+}
+
+.searchContainer {
+  display: flex;
+}
+
+.filterCheck {
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0;
+  text-align: start;
 }

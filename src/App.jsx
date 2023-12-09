@@ -1,15 +1,24 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import './App.css'
 import Footer from './Components/Footer/Footer'
 import Header from './Components/Header/Header'
 import { useMovies } from './hooks/useMovies'
 import { Movies } from './Components/Movies/ListOfMovies'
 import { useSearch } from './hooks/useSearch'
+import debounce from "just-debounce-it";
 
 function App() {
   const [sort, setSort] = useState(false)
   const { search, setSearch, error } = useSearch()
   const { movies, loading, getMovies } = useMovies({ search, sort })
+
+  const debouncedGetMovies = useCallback(
+    debounce((search) => {
+      //console.log('debounce', search)
+      getMovies({ search })
+    }, 300)
+    , [getMovies]
+  )
 
   // Method with useRef
   /*const inputRef = useRef()
@@ -37,7 +46,9 @@ function App() {
 
   // Input change handler (input form)
   const handleChange = (event) => {
-    setSearch(event.target.value)
+    const newSearch = event.target.value
+    setSearch(newSearch)
+    debouncedGetMovies(newSearch)
   }
 
   const handleSort = () => {
@@ -50,19 +61,23 @@ function App() {
       <main className='main'>
         <form className='form' onSubmit={handleSubmit}>
           <section className='inputSearch'>
-            <div>
-              <label className='inputLabel' htmlFor="queryId">Enter the name of the movie </label>
+            <div className='searchContainer'>
               <input className='input' onChange={handleChange} value={search} name='query' type="text" id='queryId' placeholder='Avengers, Star Wars, ...' />
+              <button className='btnSearch' type='submit'>Search</button>
             </div>
-            <input className='checkbox' type="checkbox" id='sortId' onChange={handleSort} checked={sort} />
-            <button className='btnSearch' type='submit'>Search</button>
+            <div className='filterCheck'>
+              <br />
+              <input className='checkbox' type="checkbox" onChange={handleSort} checked={sort} />
+              <label className='filterLabel' htmlFor='sortId'>Order by Title</label>
+            </div>
           </section>
         </form>
         <section className='sectionError'>
           {error && <p className='error'>{error}</p>}
         </section>
         {loading ? <p className='loadingText'>Loading...</p> :
-          <Movies movies={movies} />
+          (movies ? <Movies movies={movies} /> : null)
+
         }
       </main>
       <Footer />

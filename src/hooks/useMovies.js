@@ -11,7 +11,7 @@ export function useMovies({ search, sort }) {
   const previousSearch = useRef(search)
 
 
-// UseMemo for functions || useCallback for values
+  // UseMemo for functions || useCallback for values
   const getMovies = useCallback(async ({ search }) => {
     if (search === previousSearch.current) return
 
